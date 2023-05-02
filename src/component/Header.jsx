@@ -4,7 +4,7 @@ import { AuthContext } from '../provider/AuthProvider';
 
 const Header = () => {
 
-    const { user, logOut, googleLogin } = useContext(AuthContext);
+    const { user, logOut, googleLogin, githubLogin} = useContext(AuthContext);
 
     const signOut = () => {
         logOut()
@@ -12,6 +12,10 @@ const Header = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
+    }
+ 
+    const handleGithubLogin=()=>{
+        githubLogin()
     }
 
     return (
@@ -32,7 +36,8 @@ const Header = () => {
                         </button>
                 }
 
-                <button onClick={handleGoogleLogin} className="btn btn-secondary">Button</button>
+                <button onClick={handleGoogleLogin} className="btn btn-secondary">Google</button>
+                <button onClick={handleGithubLogin} className="btn btn-secondary ml-4">Github</button>
             </div>
         </div>
     );
